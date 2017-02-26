@@ -45,6 +45,8 @@ class Chart
     public $legend;
     public $x_axis_title;
     public $y_axis_title;
+    public $y_axis_min;
+    public $y_axis_max;
 
     /**
      * Create a new chart instance.
@@ -73,6 +75,8 @@ class Chart
         $this->legend = config('charts.default.legend');
         $this->x_axis_title = config('charts.default.x_axis_title');
         $this->y_axis_title = config('charts.default.y_axis_title');
+        $this->y_axis_min = config('charts.default.y_axis_min');
+        $this->y_axis_max = config('charts.default.y_axis_max');
 
         // Setup the chart loader
         $this->loader = config('charts.default.loader.active');
@@ -430,15 +434,43 @@ class Chart
     }
 
     /**
-     * Set the title of a chart's y-axis (where applicable).
-     *
-     * @param bool $y_axis_title
-     *
-     * @return Chart
-     */
+ * Set the title of a chart's y-axis (where applicable).
+ *
+ * @param bool $y_axis_title
+ *
+ * @return Chart
+ */
     public function y_axis_title($y_axis_title)
     {
         $this->y_axis_title = $y_axis_title;
+
+        return $this;
+    }
+
+    /**
+     * Set the min of a chart's y-axis (where applicable).
+     *
+     * @param bool $y_axis_min
+     *
+     * @return Chart
+     */
+    public function y_axis_min($y_axis_min)
+    {
+        $this->y_axis_min = $y_axis_min;
+
+        return $this;
+    }
+
+    /**
+     * Set the min of a chart's y-axis (where applicable).
+     *
+     * @param bool $y_axis_max
+     *
+     * @return Chart
+     */
+    public function y_axis_max($y_axis_max)
+    {
+        $this->y_axis_min = $y_axis_max;
 
         return $this;
     }
