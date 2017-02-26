@@ -40,8 +40,8 @@
                 ],
             },
             yAxis: {
-                min: "{{ $model->y_min_value }}",
-                max: "{{ $model->y_max_value }}",
+                min: "{{ $model->y_axis_min }}",
+                max: "{{ $model->y_axis_max }}",
 
                 title: {
                     text: "{{ $model->y_axis_title === null ? $model->element_label : $model->y_axis_title }}"
