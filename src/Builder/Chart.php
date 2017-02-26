@@ -462,7 +462,7 @@ class Chart
     }
 
     /**
-     * Set the min of a chart's y-axis (where applicable).
+     * Set the max of a chart's y-axis (where applicable).
      *
      * @param bool $y_axis_max
      *
@@ -470,7 +470,7 @@ class Chart
      */
     public function y_axis_max($y_axis_max)
     {
-        $this->y_axis_min = $y_axis_max;
+        $this->y_axis_max = $y_axis_max;
 
         return $this;
     }
